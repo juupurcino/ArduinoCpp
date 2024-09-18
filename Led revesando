@@ -1,0 +1,37 @@
+// C++ code
+//
+
+int amarelo = 11;
+int azul = 10;
+
+void setup()
+{
+  pinMode(amarelo, OUTPUT);
+  pinMode(azul, OUTPUT);
+  
+}
+
+void loop()
+{		
+  	int j = 255;
+      
+      for (int i = 255; i <= 0; i--) {
+
+    	analogWrite(amarelo, i);
+        analogWrite(azul, j);
+    	delay(10);
+        j++;
+  		}
+
+  
+  	for (int i = 0; i <= 255; i++) {
+
+    	analogWrite(amarelo, i);
+      	analogWrite(azul, j);
+    	delay(10);
+      	j--;
+  	}
+
+
+      
+}
