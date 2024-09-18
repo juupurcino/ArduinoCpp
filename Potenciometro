@@ -1,0 +1,40 @@
+// C++ code
+//
+
+int vermelho = 13;
+int verde = 12;
+int amarelo = 11;
+int sensor = A2;
+
+void setup()
+{
+  pinMode(vermelho, OUTPUT);
+  pinMode(verde, OUTPUT);
+  pinMode(amarelo, OUTPUT);
+  
+}
+
+void loop()
+{
+  
+  	int sensorVal = analogRead(sensor);
+
+  		int tensao = map(sensorVal, 0, 1023, 0, 5); 
+   		int valor = map(sensorVal, 0, 1023, 500, 2000);
+  
+  
+   		digitalWrite(vermelho, 1);
+        digitalWrite(verde, 1);
+        digitalWrite(amarelo, 1);
+        delay(valor);
+        digitalWrite(vermelho, 0);
+        digitalWrite(verde, 0);
+        digitalWrite(amarelo, 0);
+      	delay(valor);
+  	
+  		Serial.begin(9600);
+  		Serial.print(tensao);
+  		Serial.println("V");
+
+      
+}
