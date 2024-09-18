@@ -1,0 +1,50 @@
+int amarelo = 11;
+int azul = 10;
+int botao = 12;
+int cont = 0; 
+
+void setup() {
+  Serial.begin(9600); 
+  pinMode(amarelo, OUTPUT);
+  pinMode(azul, OUTPUT);
+  pinMode(botao, INPUT); 
+}
+
+void loop() {
+  
+  int click = digitalRead(botao);
+  Serial.println(click);
+  delay(100); 
+
+  if (click == HIGH) {
+    cont++;
+    delay(500); 
+  }
+  
+  if(cont > 3){
+  	cont = 1;
+  }
+
+  if (cont == 1) {
+    digitalWrite(amarelo, LOW);
+    digitalWrite(azul, LOW);
+  } 
+  
+  else if (cont == 2) {
+    digitalWrite(amarelo, HIGH);
+    digitalWrite(azul, HIGH);
+    delay(1000);
+    digitalWrite(amarelo,LOW);
+    digitalWrite(azul, LOW);
+  } 
+  else if (cont == 3) {
+    digitalWrite(amarelo, HIGH);
+    digitalWrite(azul, HIGH);
+    delay(500);
+    digitalWrite(amarelo,LOW);
+    digitalWrite(azul, LOW);
+  }
+
+  Serial.print("cont: ");
+  Serial.println(cont);
+}
