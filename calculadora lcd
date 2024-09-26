@@ -1,0 +1,71 @@
+#include <LiquidCrystal.h>
+
+// C++ code
+//
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+int nm = A1;
+int nm2 = A2;
+int op = A0;
+
+void setup()
+{
+  lcd.begin(16,2);
+  pinMode(nm, INPUT);
+  pinMode(nm2, INPUT);
+  Serial.begin(9500);
+}
+
+void loop()
+{
+  int num = map(analogRead(nm), 0, 1023, 0, 100);
+  int num2 = map(analogRead(nm2), 0, 1023, 0, 100);
+  int ops = map(analogRead(op), 0, 1023, 1, 5);
+  
+  lcd.setCursor(0,0);
+  switch (ops) {
+  	case 1:
+     lcd.print("ESCOLHA OPERACAO");
+     break;
+    case 2:
+     lcd.print("SOMA");
+     lcd.setCursor(0,1);
+     lcd.print(num);
+     lcd.print(" + ");
+     lcd.print(num2);
+     lcd.print(" = ");
+     lcd.print(num + num2);
+     break;
+    case 3:
+     lcd.print("SUBTRACAO");
+     lcd.setCursor(0,1);
+     lcd.print(num);
+     lcd.print(" - ");
+     lcd.print(num2);
+     lcd.print(" = ");
+     lcd.print(num - num2);
+     break;
+    case 4:
+     lcd.print("MULTIPLICACAO");
+     lcd.setCursor(0,1);
+     lcd.print(num);
+     lcd.print(" x ");
+     lcd.print(num2);
+     lcd.print(" = ");
+     lcd.print(num * num2);
+     break;
+    case 5:
+     lcd.print("DIVISAO");
+     lcd.setCursor(0,1);
+     lcd.print(num);
+     lcd.print(" / ");
+     lcd.print(num2);
+     lcd.print(" = ");
+     lcd.print(num / num2);
+     break;
+    default:
+     break;
+  }
+  
+  delay(500);
+  lcd.clear();
+}
