@@ -1,0 +1,296 @@
+#include <LiquidCrystal.h>
+
+// C++ code
+//
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+
+byte simbolo_direita[8] = {B11110, 
+                  	B11111,
+                   B11111,
+                  B11111,
+                  B11111,
+                  B11111,
+                  B11111,
+                  B11110};
+
+
+byte simbolo_esquerda[8] = {B01111, 
+                  	B11111,
+                   B11111,
+                  B11111,
+                  B11111,
+                  B11111,
+                  B11111,
+                  B01111};
+
+byte cima[8] = {B11111, 
+                    B11111,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00000};
+
+byte baixo[8] = {B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+  				  B00000,  
+                  B00000,
+                  B11111,
+                  B11111};
+
+
+byte meio[8] = {B00000, 
+                    B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B11111,
+                  B11111};
+
+byte meio_cima[8] = {B11111, 
+                    B11111,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B11111,
+                  B11111};
+
+byte canto_direito[8] = {B00000, 
+                    B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00011,
+                  B00111};
+
+byte direito[8] = {B11110, 
+                    B11100,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B11000,
+                  B11100};
+
+byte esquerdo[8] = {B00001, 
+                    B00011,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00000,
+                  B00011,
+                  B00111};
+
+
+
+void zero(){
+  
+  	lcd.setCursor(9,0);
+	lcd.write(1);
+    lcd.setCursor(9,1);
+	lcd.write(1);
+  	lcd.setCursor(8,0);
+	lcd.write(3);
+    lcd.setCursor(8,1);
+	lcd.write(4);
+  	lcd.setCursor(7,0);
+	lcd.write(2);
+    lcd.setCursor(7,1);
+	lcd.write(2);
+  	delay(1000);
+  	lcd.clear();
+
+}
+
+void um(){
+  
+  	lcd.setCursor(9,0);
+	lcd.write(1);
+    lcd.setCursor(9,1);
+	lcd.write(1);
+  	delay(1000);
+  	lcd.clear();
+
+}
+
+void dois(){
+  
+  	lcd.setCursor(9,0);
+	lcd.write(1);
+    lcd.setCursor(9,1);
+	lcd.write(4);
+  	lcd.setCursor(8,1);
+	lcd.write(4);
+  	lcd.setCursor(8,0);
+	lcd.write(6);
+  	lcd.setCursor(7,1);
+	lcd.write(2);
+  	lcd.setCursor(7,0);
+	lcd.write(5);
+  	delay(1000);
+  	lcd.clear();
+
+}
+
+void tres(){
+	
+  	lcd.setCursor(9,0);
+	lcd.write(1);
+    lcd.setCursor(9,1);
+	lcd.write(1);
+  	lcd.setCursor(8,0);
+	lcd.write(6);
+  	lcd.setCursor(8,1);
+	lcd.write(4);
+  	lcd.setCursor(7,1);
+	lcd.write(8);
+  	lcd.setCursor(7,0);
+	lcd.write(5);
+  	delay(1000);
+  	lcd.clear();
+}
+
+void quatro(){
+	
+  	lcd.setCursor(9,0);
+	lcd.write(1);
+    lcd.setCursor(9,1);
+	lcd.write(1);
+  	lcd.setCursor(8,0);
+	lcd.write(4);
+  	lcd.setCursor(7,0);
+	lcd.write(2);
+  	delay(1000);
+  	lcd.clear();
+  
+}
+
+
+void cinco(){
+
+    lcd.setCursor(9,1);
+	lcd.write(1);
+  	lcd.setCursor(8,0);
+	lcd.write(6);
+  	lcd.setCursor(8,1);
+	lcd.write(4);
+  	lcd.setCursor(7,0);
+	lcd.write(2);
+  	lcd.setCursor(7,1);
+	lcd.write(8);
+  	lcd.setCursor(9,0);
+	lcd.write(7);
+  	delay(1000);
+  	lcd.clear();
+}
+
+void seis(){
+
+    lcd.setCursor(9,1);
+	lcd.write(1);
+  	lcd.setCursor(8,0);
+	lcd.write(6);
+  	lcd.setCursor(8,1);
+	lcd.write(4);
+  	lcd.setCursor(7,1);
+	lcd.write(2);
+  	lcd.setCursor(7,0);
+	lcd.write(2);
+  	lcd.setCursor(9,0);
+	lcd.write(7);
+  	delay(1000);
+  	lcd.clear();
+}
+
+void sete(){
+	
+	lcd.setCursor(9,1);
+	lcd.write(1);
+  	lcd.setCursor(9,0);
+	lcd.write(1);
+  	lcd.setCursor(8,0);
+	lcd.write(3);
+  	lcd.setCursor(7,0);
+	lcd.write(2);
+  	delay(1000);
+  	lcd.clear();
+}
+
+
+void oito(){
+	
+	lcd.setCursor(9,1);
+	lcd.write(1);
+  	lcd.setCursor(9,0);
+	lcd.write(1);
+  	lcd.setCursor(8,0);
+	lcd.write(6);
+  	lcd.setCursor(8,1);
+	lcd.write(4);
+  	lcd.setCursor(7,0);
+	lcd.write(2);
+  	lcd.setCursor(7,1);
+	lcd.write(2);
+  	delay(1000);
+  	lcd.clear();
+}
+
+void nove(){
+	
+	lcd.setCursor(9,1);
+	lcd.write(1);
+  	lcd.setCursor(9,0);
+	lcd.write(1);
+  	lcd.setCursor(8,0);
+	lcd.write(6);
+  	lcd.setCursor(8,1);
+	lcd.write(4);
+  	lcd.setCursor(7,0);
+	lcd.write(2);
+  	lcd.setCursor(7,1);
+	lcd.write(8);
+  	delay(1000);
+  	lcd.clear();
+}
+
+void setup()
+{
+  lcd.begin(16,2);
+  Serial.begin(9500);
+  lcd.createChar(1, simbolo_direita);
+  lcd.createChar(2, simbolo_esquerda);
+  lcd.createChar(3, cima);
+  lcd.createChar(4, baixo);
+  lcd.createChar(6, meio_cima);
+  lcd.createChar(7, direito);
+  lcd.createChar(5, esquerdo);
+  lcd.createChar(8, canto_direito);
+
+
+}
+
+void loop()
+{
+	zero();
+  	um();
+  	dois();
+  	tres();
+  	quatro();
+  	cinco();
+  	seis();
+  	sete();
+  	oito();
+  	nove();
+      
+      
+
+	delay(2000);
+  	lcd.clear();
+}
